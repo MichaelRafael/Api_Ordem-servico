@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity(name = "tb_cliente")
+@Entity
+@Table(name = "tb_cliente")
 public class Cliente extends Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 

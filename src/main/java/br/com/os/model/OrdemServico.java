@@ -4,19 +4,15 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import br.com.os.enuns.Prioridade;
 import br.com.os.enuns.Status;
 
-@Entity(name = "tb_ordem-servico")
+@Entity
+@Table(name = "tb_ordem_servico")
 public class OrdemServico implements Serializable {
 	private static final long serialVersionUID = 1L;
 

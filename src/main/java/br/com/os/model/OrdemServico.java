@@ -24,7 +24,7 @@ public class OrdemServico implements Serializable {
 	private LocalDateTime dataAbertura;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-	private LocalDateTime dataAFechamento;
+	private LocalDateTime dataFechamento;
 	
 	private Integer prioridade;
 	private String observacoes;
@@ -73,12 +73,12 @@ public class OrdemServico implements Serializable {
 		this.dataAbertura = dataAbertura;
 	}
 
-	public LocalDateTime getDataAFechamento() {
-		return dataAFechamento;
+	public LocalDateTime getDataFechamento() {
+		return dataFechamento;
 	}
 
-	public void setDataAFechamento(LocalDateTime dataAFechamento) {
-		this.dataAFechamento = dataAFechamento;
+	public void setDataFechamento(LocalDateTime dataFechamento) {
+		this.dataFechamento = dataFechamento;
 	}
 
 	public Prioridade getPrioridade() {

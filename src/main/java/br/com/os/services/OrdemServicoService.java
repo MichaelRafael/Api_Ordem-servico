@@ -45,9 +45,9 @@ public class OrdemServicoService {
 		
 	}
 	
-	public OrdemServico upDate(OrdemServicoDTO obj) {
-		findById(obj.getId());
-		return fromDTO(obj);
+	public OrdemServico upDate(OrdemServicoDTO objDTO) {
+		findById(objDTO.getId());
+		return fromDTO(objDTO);
 	}
 	
 	private OrdemServico fromDTO(OrdemServicoDTO objDTO) {
@@ -59,7 +59,7 @@ public class OrdemServicoService {
 		newOS.setStatus(Status.toEnum(objDTO.getStatus().getCod()));
 		
 		if(newOS.getStatus().getCod() == 2) {
-			newOS.setDataAFechamento(LocalDateTime.now());
+			newOS.setDataFechamento(LocalDateTime.now());
 		}
 		
 		Tecnico tec = tecnicoService.findById(objDTO.getTecnico());

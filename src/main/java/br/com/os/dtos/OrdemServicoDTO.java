@@ -3,6 +3,7 @@ package br.com.os.dtos;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import br.com.os.enuns.Prioridade;
@@ -20,11 +21,11 @@ public class OrdemServicoDTO implements Serializable {
 	private LocalDateTime dataAbertura;
 
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-	private LocalDateTime dataAFechamento;
+	private LocalDateTime dataFechamento;
 
 	private Integer prioridade;
 	
-	@NotEmpty(message = "O campo OBSERVAÇOES é querido!")
+	@NotBlank(message = "O campo OBSERVAÇOES é requerido!")
 	private String observacoes;
 	
 	private Integer status;
@@ -41,7 +42,7 @@ public class OrdemServicoDTO implements Serializable {
 		super();
 		this.id = obj.getId();
 		this.dataAbertura = obj.getDataAbertura();
-		this.dataAFechamento = obj.getDataAFechamento();
+		this.dataFechamento = obj.getDataFechamento();
 		this.prioridade = obj.getPrioridade().getCod();
 		this.observacoes = obj.getObservacoes();
 		this.status = obj.getStatus().getCod();
@@ -65,12 +66,12 @@ public class OrdemServicoDTO implements Serializable {
 		this.dataAbertura = dataAbertura;
 	}
 
-	public LocalDateTime getDataAFechamento() {
-		return dataAFechamento;
+	public LocalDateTime getDataFechamento() {
+		return dataFechamento;
 	}
 
-	public void setDataAFechamento(LocalDateTime dataAFechamento) {
-		this.dataAFechamento = dataAFechamento;
+	public void setDataFechamento(LocalDateTime dataFechamento) {
+		this.dataFechamento = dataFechamento;
 	}
 
 	public Prioridade getPrioridade() {

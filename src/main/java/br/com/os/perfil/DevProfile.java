@@ -19,7 +19,7 @@ public class DevProfile {
 
     @Bean
     public boolean instanciaDB() {
-        if(ddl.equals("create-drop")) {
+        if(ddl.equals("update")) {
             this.dbService.instanciaBD();
         }
 
